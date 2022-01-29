@@ -32,6 +32,7 @@
     "@mdi/js": "^6.5.95",
     "@tailwindcss/line-clamp": "^0.3.1",
     "ftellipsis": "^0.2.3",
+    "fuse.js": "^6.5.3",
     "sass": "^1.49.0",
     "sirv-cli": "^2.0.0",
     "svelte-materialify": "^0.3.11"

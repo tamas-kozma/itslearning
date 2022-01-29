@@ -1,0 +1,4 @@
+* Plan period in days and time zones.
+* Plan availability and clock differences.
+* Localization.
+

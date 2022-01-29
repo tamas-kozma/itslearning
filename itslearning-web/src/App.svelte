@@ -1,24 +1,28 @@
 <script lang="ts">
-	import { MaterialApp, Button } from 'svelte-materialify';
-	import PlanList from "./components/PlanList.svelte";
+	import { MaterialAppMin } from 'svelte-materialify';
+	import PlansPage from "./components/PlansPage.svelte";
 
 	localStorage.theme = 'light';
-	//localStorage.theme = 'dark';
-	//localStorage.removeItem('theme');
+  localStorage.theme = 'dark';
+	//localStorage.removeItem('theme'); 
+
+	let theme = localStorage.theme;
 
 	// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+	if (theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 		document.documentElement.classList.add('dark')
 	} else {
   	document.documentElement.classList.remove('dark')
 	}
 </script>
 
-<MaterialApp>
-	<div class="w-full md:w-[768px] bg-neutral-50 dark:bg-neutral-700 h-screen mx-auto px-8 py-2">
-		<PlanList></PlanList>
-	</div>
-</MaterialApp>
+<main>
+	<MaterialAppMin {theme}>
+		<div class="w-full md:w-[768px] bg-background dark:bg-background-dark text-foreground dark:text-foreground-dark min-h-screen mx-auto px-8 py-2">
+			<PlansPage></PlansPage>
+		</div>
+	</MaterialAppMin>
+</main>
 
 <style global lang="postcss">
 	@tailwind base;
@@ -33,5 +37,18 @@
 		.card-title {
 			@apply font-bold text-lg;
 		}
-}
+	}
+
+	.tag-color-0 {
+		background-color: #FEEBBB !important;
+	}
+	.tag-color-1 {
+		background-color: #C4ECFF !important;
+	}
+	.tag-color-2 {
+		background-color: #C0E8DC !important;
+	}
+	.tag-color-3 {
+		background-color: #F6C8C5 !important;
+	}
 </style>
