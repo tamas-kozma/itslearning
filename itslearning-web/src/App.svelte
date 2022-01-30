@@ -2,7 +2,7 @@
 	import { MaterialAppMin } from 'svelte-materialify';
 	import PlansPage from "./components/PlansPage.svelte";
 
-	localStorage.theme = 'light';
+	//localStorage.theme = 'light';
   localStorage.theme = 'dark';
 	//localStorage.removeItem('theme'); 
 
